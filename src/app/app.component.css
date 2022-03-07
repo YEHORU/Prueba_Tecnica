@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+ }
+
+.navbar-custom {
+    background-color: orange;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+.navbar-custom .nav-link {
+    color: white;
+}
+.navbar-custom .nav-link:active {
+    color: orangered;
+}
+
+ .demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .mat-form-field{
+    margin-left: 5%;
+    margin-top: 1%;
+    color: white;
+  }
+  #malo{
+    color: red;
+  }

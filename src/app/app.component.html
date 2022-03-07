@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Haibu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" href="#">¿Quiénes Somos?</a>
+        <a class="nav-link active" href="#">Clientes</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-12 mt-3">
+
+      <h1>Lista de empleados Haibu</h1>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+
+      <div class="bg-dark">
+          <mat-form-field>
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+          </mat-form-field>
+        </div> 
+      
+
+      <div class="mat-elevation-z8">
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let empleados" (click)="viewDataEmpleados(empleados)"> {{empleados.id}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let empleados" (click)="viewDataEmpleados(empleados)"> {{empleados.nombre}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef> Apellido </th>
+            <td mat-cell *matCellDef="let empleados" (click)="viewDataEmpleados(empleados)"> {{empleados.apellido}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+        </table>
+        
+      </div>
+
+      <div *ngIf="oculto">
+        <div class="row justify-content-center">
+      
+          <div class="card mb-3 mt-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../assets/img/monigote.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">ID: {{ this.id }}</h5>
+                  <p class="card-text">RUT: {{ this.rut }} {{this.rutmalo}}</p> 
+                  <p class="card-text">Nombre: {{ this.nombre }} Apellido: {{ this.apellido }}</p>
+                  <p class="card-text">Fecha de Nacimiento: {{ this.fechanacimiento }} <a id="malo">{{this.diamalo}}  {{this.mesmalo}} {{this.aniomalo}}</a></p>
+                  <p class="card-text">Telefono: {{ this.telefono }} Dirección: {{ this.calle }} {{this.numero}} {{this.comuna}}</p>
+                  <p class="card-text">¿Está Activo?: {{ this.activo }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
