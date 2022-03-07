@@ -1,2 +1,2 @@
 # Prueba_Tecnica
-Repositorio de la prueba técnica de back-end
+Repositorio de la prueba técnica de front-end
